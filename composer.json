@@ -1,0 +1,20 @@
+{
+  "name": "xltxlm/fileinfo",
+  "authors": [
+    {
+      "name": "copygithub",
+      "email": "xltxl˚m@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "xltxlm\\fileinfo\\": [
+        "src/",
+        "./"
+      ]
+    }
+  }
+}
