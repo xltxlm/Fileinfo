@@ -6,3 +6,4 @@ php_errors.log
 *.tar.gz
 *.sql
 log@*.json
+vendor
