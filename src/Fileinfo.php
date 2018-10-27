@@ -9,6 +9,17 @@ class Fileinfo extends Fileinfo\Fileinfo_implements
 {
     private $stat = [];
 
+    /**
+     * Fileinfo constructor.
+     */
+    public function __construct(string $Filepath = null)
+    {
+        if ($Filepath != null) {
+            $this->setFilepath($Filepath);
+        }
+    }
+
+
     public function setFilepath(string $Filepath)
     {
         $pathinfo = pathinfo($Filepath);
