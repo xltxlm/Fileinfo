@@ -9,4 +9,38 @@ abstract class Fileinfo_tmp_implements
 
 
 
+    /* @var string 文件路径 */
+        protected $FielPath = '';
+    
+    /**
+     * @return string;
+     */
+    public function getFielPath():string    {
+        return $this->FielPath;
+    }
+
+    /**
+     * @param string $FielPath;
+     * @return $this
+     */
+    public function setFielPath(string $FielPath)
+    {
+        $this->FielPath = $FielPath;
+        return $this;
+    }
+
+    /**
+     *   返回新的文件路径;
+     *   @return :string;
+    */
+    abstract public function __invoke():string;
+    /**
+     * @return $this
+     */
+    function __invoke_this()
+    {
+        $this->__invoke();
+        return $this;
+    }
+
 }
