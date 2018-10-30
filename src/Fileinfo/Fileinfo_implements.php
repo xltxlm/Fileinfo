@@ -1,17 +1,20 @@
 <?php
 namespace xltxlm\fileinfo\Fileinfo;
 
+use \xltxlm\fileinfo\Plus\__to;
 /**
  * 文件的基本操作方式;
 */
 abstract class Fileinfo_implements
 {
 
+    use __to;
 
 
     /* @var string 扩展名,不带点的 */
         protected $Extension = '';
     
+
     /**
      * @return string;
      */
@@ -29,29 +32,10 @@ abstract class Fileinfo_implements
         return $this;
     }
 
-    /* @var string 设置文件的路径 */
-        protected $Filepath = '';
-    
-    /**
-     * @return string;
-     */
-    public function getFilepath():string    {
-        return $this->Filepath;
-    }
-
-    /**
-     * @param string $Filepath;
-     * @return $this
-     */
-    public function setFilepath(string $Filepath)
-    {
-        $this->Filepath = $Filepath;
-        return $this;
-    }
-
     /* @var string 获取文件名,带后缀 */
         protected $Filename_and_Extension = '';
     
+
     /**
      * @return string;
      */
@@ -72,6 +56,7 @@ abstract class Fileinfo_implements
     /* @var string 获取文件名,不带后缀 */
         protected $Filename_no_Extension = '';
     
+
     /**
      * @return string;
      */
@@ -92,6 +77,7 @@ abstract class Fileinfo_implements
     /* @var string 文件全路径 */
         protected $Realpath = '';
     
+
     /**
      * @return string;
      */
@@ -112,6 +98,7 @@ abstract class Fileinfo_implements
     /* @var int 文件大小 */
         protected $Filesize = 0;
     
+
     /**
      * @return int;
      */
@@ -132,6 +119,7 @@ abstract class Fileinfo_implements
     /* @var string 文件夹 */
         protected $Dirname = '';
     
+
     /**
      * @return string;
      */
@@ -152,6 +140,7 @@ abstract class Fileinfo_implements
     /* @var bool 文件是否存在 */
         protected $Exists = false;
     
+
     /**
      * @return bool;
      */
@@ -172,6 +161,7 @@ abstract class Fileinfo_implements
     /* @var bool 文件存在,但是内容为空 */
         protected $ExistsEmpty = false;
     
+
     /**
      * @return bool;
      */
@@ -192,6 +182,7 @@ abstract class Fileinfo_implements
     /* @var string 文件创建时间 */
         protected $Filemtime = '';
     
+
     /**
      * @return string;
      */
