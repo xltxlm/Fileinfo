@@ -9,21 +9,10 @@ class Fileinfo extends Fileinfo\Fileinfo_implements
 {
     private $stat = [];
 
-    /**
-     * Fileinfo constructor.
-     */
-    public function __construct(string $Filepath = null)
-    {
-        if ($Filepath != null) {
-            $this->setFilepath($Filepath);
-        }
-    }
-
 
     public function setFilepath(string $Filepath)
     {
         $pathinfo = pathinfo($Filepath);
-        $this->Realpath = realpath($Filepath);
         $this->Extension = $pathinfo['extension'];
         $this->Filename_no_Extension = $pathinfo['filename'];
         $this->Dirname = $pathinfo['dirname'];
@@ -33,6 +22,12 @@ class Fileinfo extends Fileinfo\Fileinfo_implements
         $this->ExistsEmpty = $this->Exists && $this->Filesize == 0;
         return parent::setFilepath($Filepath);
     }
+
+    public function getRealpath(): string
+    {
+        return realpath($this->getFilepath());
+    }
+
 
     /**
      * @return array
@@ -47,6 +42,15 @@ class Fileinfo extends Fileinfo\Fileinfo_implements
     {
         return $this->getStat()['mtime'];
     }
+
+    public function Unlink()
+    {
+        if ($this->getExists()) {
+            return unlink($this->getFilepath());
+        }
+        return true;
+    }
+
 
     public function Reload()
     {

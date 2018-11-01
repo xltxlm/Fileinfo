@@ -15,12 +15,16 @@ abstract class Fileinfo_implements
         protected $Extension = '';
     
 
+
     /**
      * @return string;
      */
     public function getExtension():string    {
         return $this->Extension;
     }
+
+
+
 
     /**
      * @param string $Extension;
@@ -36,12 +40,16 @@ abstract class Fileinfo_implements
         protected $Filename_and_Extension = '';
     
 
+
     /**
      * @return string;
      */
     public function getFilename_and_Extension():string    {
         return $this->Filename_and_Extension;
     }
+
+
+
 
     /**
      * @param string $Filename_and_Extension;
@@ -57,12 +65,16 @@ abstract class Fileinfo_implements
         protected $Filename_no_Extension = '';
     
 
+
     /**
      * @return string;
      */
     public function getFilename_no_Extension():string    {
         return $this->Filename_no_Extension;
     }
+
+
+
 
     /**
      * @param string $Filename_no_Extension;
@@ -78,12 +90,16 @@ abstract class Fileinfo_implements
         protected $Realpath = '';
     
 
+
     /**
      * @return string;
      */
     public function getRealpath():string    {
         return $this->Realpath;
     }
+
+
+
 
     /**
      * @param string $Realpath;
@@ -99,12 +115,16 @@ abstract class Fileinfo_implements
         protected $Filesize = 0;
     
 
+
     /**
      * @return int;
      */
     public function getFilesize():int    {
         return $this->Filesize;
     }
+
+
+
 
     /**
      * @param int $Filesize;
@@ -120,12 +140,16 @@ abstract class Fileinfo_implements
         protected $Dirname = '';
     
 
+
     /**
      * @return string;
      */
     public function getDirname():string    {
         return $this->Dirname;
     }
+
+
+
 
     /**
      * @param string $Dirname;
@@ -141,12 +165,16 @@ abstract class Fileinfo_implements
         protected $Exists = false;
     
 
+
     /**
      * @return bool;
      */
     public function getExists():bool    {
         return $this->Exists;
     }
+
+
+
 
     /**
      * @param bool $Exists;
@@ -162,12 +190,16 @@ abstract class Fileinfo_implements
         protected $ExistsEmpty = false;
     
 
+
     /**
      * @return bool;
      */
     public function getExistsEmpty():bool    {
         return $this->ExistsEmpty;
     }
+
+
+
 
     /**
      * @param bool $ExistsEmpty;
@@ -183,12 +215,16 @@ abstract class Fileinfo_implements
         protected $Filemtime = '';
     
 
+
     /**
      * @return string;
      */
     public function getFilemtime():string    {
         return $this->Filemtime;
     }
+
+
+
 
     /**
      * @param string $Filemtime;
@@ -227,5 +263,11 @@ abstract class Fileinfo_implements
         $this->Reload();
         return $this;
     }
+
+    /**
+     *   删除掉文件;
+     *   @return ;
+    */
+    abstract public function Unlink();
 
 }
