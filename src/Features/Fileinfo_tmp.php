@@ -11,7 +11,7 @@ class Fileinfo_tmp extends Fileinfo_tmp\Fileinfo_tmp_implements
 {
     public function __invoke(): string
     {
-        $getFileinfo = (new Fileinfo($this->getFielPath()));
+        $getFileinfo = (new Fileinfo($this->getFilepath()));
         $i = 0;
         //循环到生成的文件路径是不存在的为止
         while ($i++ < 10) {
