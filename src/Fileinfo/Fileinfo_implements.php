@@ -11,7 +11,7 @@ abstract class Fileinfo_implements
     use __to;
 
 
-    /* @var string 扩展名,不带点的 */
+    /* @var string  扩展名,不带点的 */
         protected $Extension = '';
     
 
@@ -26,6 +26,8 @@ abstract class Fileinfo_implements
 
 
 
+
+
     /**
      * @param string $Extension;
      * @return $this
@@ -36,7 +38,7 @@ abstract class Fileinfo_implements
         return $this;
     }
 
-    /* @var string 获取文件名,带后缀 */
+    /* @var string  获取文件名,带后缀 */
         protected $Filename_and_Extension = '';
     
 
@@ -51,6 +53,8 @@ abstract class Fileinfo_implements
 
 
 
+
+
     /**
      * @param string $Filename_and_Extension;
      * @return $this
@@ -61,7 +65,7 @@ abstract class Fileinfo_implements
         return $this;
     }
 
-    /* @var string 获取文件名,不带后缀 */
+    /* @var string  获取文件名,不带后缀 */
         protected $Filename_no_Extension = '';
     
 
@@ -76,6 +80,8 @@ abstract class Fileinfo_implements
 
 
 
+
+
     /**
      * @param string $Filename_no_Extension;
      * @return $this
@@ -86,7 +92,7 @@ abstract class Fileinfo_implements
         return $this;
     }
 
-    /* @var string 文件全路径 */
+    /* @var string  文件全路径 */
         protected $Realpath = '';
     
 
@@ -101,6 +107,8 @@ abstract class Fileinfo_implements
 
 
 
+
+
     /**
      * @param string $Realpath;
      * @return $this
@@ -111,7 +119,7 @@ abstract class Fileinfo_implements
         return $this;
     }
 
-    /* @var int 文件大小 */
+    /* @var int  文件大小 */
         protected $Filesize = 0;
     
 
@@ -126,6 +134,8 @@ abstract class Fileinfo_implements
 
 
 
+
+
     /**
      * @param int $Filesize;
      * @return $this
@@ -136,7 +146,7 @@ abstract class Fileinfo_implements
         return $this;
     }
 
-    /* @var string 文件夹 */
+    /* @var string  文件夹 */
         protected $Dirname = '';
     
 
@@ -151,6 +161,8 @@ abstract class Fileinfo_implements
 
 
 
+
+
     /**
      * @param string $Dirname;
      * @return $this
@@ -161,7 +173,7 @@ abstract class Fileinfo_implements
         return $this;
     }
 
-    /* @var bool 文件是否存在 */
+    /* @var bool  文件是否存在 */
         protected $Exists = false;
     
 
@@ -173,6 +185,11 @@ abstract class Fileinfo_implements
         return $this->Exists;
     }
 
+
+    public function isExists():bool    {
+            return $this->getExists();
+    }
+    
 
 
 
@@ -186,7 +203,7 @@ abstract class Fileinfo_implements
         return $this;
     }
 
-    /* @var bool 文件存在,但是内容为空 */
+    /* @var bool  文件存在,但是内容为空 */
         protected $ExistsEmpty = false;
     
 
@@ -198,6 +215,11 @@ abstract class Fileinfo_implements
         return $this->ExistsEmpty;
     }
 
+
+    public function isExistsEmpty():bool    {
+            return $this->getExistsEmpty();
+    }
+    
 
 
 
@@ -211,7 +233,7 @@ abstract class Fileinfo_implements
         return $this;
     }
 
-    /* @var string 文件创建时间 */
+    /* @var string  文件创建时间 */
         protected $Filemtime = '';
     
 
@@ -222,6 +244,8 @@ abstract class Fileinfo_implements
     public function getFilemtime():string    {
         return $this->Filemtime;
     }
+
+
 
 
 
