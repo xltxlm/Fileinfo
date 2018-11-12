@@ -45,10 +45,7 @@ class Fileinfo extends Fileinfo\Fileinfo_implements
 
     public function Unlink()
     {
-        if ($this->getExists()) {
-            return unlink($this->getFilepath());
-        }
-        return true;
+        return unlink($this->getFilepath());
     }
 
 
