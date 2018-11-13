@@ -45,7 +45,9 @@ class Fileinfo extends Fileinfo\Fileinfo_implements
 
     public function Unlink()
     {
-        return unlink($this->getFilepath());
+        $return = unlink($this->getFilepath());
+        $this->Reload();
+        return $return;
     }
 
 
