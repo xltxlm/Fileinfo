@@ -71,6 +71,7 @@ class Fileinfo extends Fileinfo\Fileinfo_implements
         if ($return) {
             throw new \Exception("创建文件:[{$this->getFilepath()}]失败:" . join($out));
         }
+        $this->Reload();
     }
 
 
