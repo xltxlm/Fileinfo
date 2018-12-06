@@ -20,6 +20,7 @@ class Fileinfo_tmp extends Fileinfo_tmp\Fileinfo_tmp_implements
             if (is_file($newpath)) {
                 continue;
             } else {
+                $this->setFilepath($newpath);
                 return $newpath;
             }
         }
