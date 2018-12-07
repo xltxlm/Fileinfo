@@ -9,6 +9,12 @@ class Fileinfo_Read_Lines extends Fileinfo_Read_Lines\Fileinfo_Read_Lines_implem
 {
     public function __invoke()
     {
+        if (strpos($this->getFilepath(), 'http') === 0) {
+            $file_get_contents = file_get_contents($this->getFilepath());
+            $tempnam = tempnam('/tmp/', 'url');
+            file_put_contents($tempnam, $file_get_contents);
+            $this->setFilepath($tempnam);
+        }
         if (!file_exists($this->getFilepath()) || !is_readable($this->getFilepath())) {
             throw new \Exception("文件不存在,或者没有读取权限.[{$this->getFilepath()}]");
         }
