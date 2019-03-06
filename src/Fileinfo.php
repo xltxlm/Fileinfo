@@ -13,7 +13,8 @@ class Fileinfo extends Fileinfo\Fileinfo_implements
     public function setFilepath(string $Filepath)
     {
         $pathinfo = pathinfo($Filepath);
-        $this->Extension = $pathinfo['extension'];
+	//确保文件的后缀名都是小写的
+        $this->Extension = strtolower($pathinfo['extension']);
         $this->Filename_no_Extension = $pathinfo['filename'];
         $this->Dirname = $pathinfo['dirname'];
         $this->Filename_and_Extension = $pathinfo['basename'];
