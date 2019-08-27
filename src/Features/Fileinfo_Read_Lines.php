@@ -9,6 +9,7 @@ class Fileinfo_Read_Lines extends Fileinfo_Read_Lines\Fileinfo_Read_Lines_implem
 {
     public function __invoke()
     {
+        //如果文件名称是http开头的,意味着是一个网址,那么改成获取网址内容
         if (strpos($this->getFilepath(), 'http') === 0) {
             $file_get_contents = file_get_contents($this->getFilepath());
             $tempnam = tempnam('/tmp/', 'url');

@@ -6,8 +6,10 @@
       "email": "xltxlm@qq.com"
     }
   ],
+  "minimum-stability": "dev",
   "require": {
-    "php": ">=7.2"
+    "php": ">=7.2",
+    "xltxlm/redis": "@dev"
   },
   "autoload": {
     "psr-4": {
