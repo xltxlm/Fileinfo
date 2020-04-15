@@ -12,8 +12,13 @@ class Fileinfo extends Fileinfo\Fileinfo_implements
 
     public function setFilepath(string $Filepath)
     {
+        //如果是网址的话，那么通过网址分析，只取出路径部分当做文件路径，这样处理出来的名字，后缀名才能正确
+        if (strpos($Filepath, "//") !== false) {
+            $parse_url = parse_url($Filepath);
+            $Filepath = $parse_url['path'];
+        }
         $pathinfo = pathinfo($Filepath);
-	//确保文件的后缀名都是小写的
+        //确保文件的后缀名都是小写的
         $this->Extension = strtolower($pathinfo['extension']);
         $this->Filename_no_Extension = $pathinfo['filename'];
         $this->Dirname = $pathinfo['dirname'];
