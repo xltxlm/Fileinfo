@@ -8,8 +8,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": ">=7.2",
-    "xltxlm/redis": "@dev"
+    "php": ">=7.2"
   },
   "autoload": {
     "psr-4": {
